@@ -13,13 +13,6 @@ st.write(
 name_on_order = st.text_input('Name on Smoothie')
 st.write('The name on your smoothie will be ', name_on_order)
 
-# option = st.selectbox(
-#     "What is your favourite fruit ",
-#     ("Banana", "Strawberries", "Peaches"),
-# )
-
-# st.write("Your favourite fruit is:", option)
-
 cnx = st.connection("snowflake")
 session = cnx.session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
